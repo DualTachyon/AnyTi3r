@@ -283,6 +283,7 @@ bool DECODER_GetText(Decoder_t *pDecoder, bool bSkip, char *pText, size_t TextLe
 	pText[0] = 0;
 
 	switch (Id) {
+#if 0
 	case 0x43:
 		bPrint = DecodeDigcDataFrame(pDecoder, pText, TextLength);
 		break;
@@ -294,11 +295,12 @@ bool DECODER_GetText(Decoder_t *pDecoder, bool bSkip, char *pText, size_t TextLe
 	case 0x7F:
 		bPrint = DecodeCach(pDecoder, pText, TextLength);
 		break;
+#endif
 
 	default:
-#if 0 // Skip commands we currently don't care about
-.		sprintf_s(pText, TextLength, "Frame %02X", Id);
-		HEX_Append(pText, TextLength, "", BS_GetCurrentPtr(&pDecoder->Bs), BS_GetRemainingBytes(&pDecoder->Bs));
+#if 1 // Skip commands we currently don't care about
+		sprintf_s(pText, TextLength, "Frame %02X", Id);
+		HEX_Append(pText, TextLength, "", pDecoder->Frame, pDecoder->FrameLength);
 		bPrint = true;
 #else
 		bPrint = false;
