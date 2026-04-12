@@ -23,6 +23,12 @@ Sample screenshots<br>
 <img src="Screenshot2.png" width="400" alt="Sample Tier 3 log">
 <br>
 
+You can also find a nice Android GUI by Joel [here](https://mat3.jcalado.com).
+
+Sample screenshot<br>
+<img src="Screenshot3.png" width="400" alt="Sample Tier 3 log">
+<br>
+
 # Patch
 
 The patch modifies the firmware so that traffic between the MCU and the DMR chip are mirrored over the USB-C serial port.
